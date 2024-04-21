@@ -20,7 +20,7 @@ def parseLine(line):
     temperature = float(fields[3]) * 0.1 * (9.0 / 5.0) + 32.0
     return (stationID, entryType, temperature)
 
-lines = sc.textFile("C:/Users/vijay/Documents/SparkCourse/1800.csv")
+lines = sc.textFile("C:/Users/vijay/Documents/SparkCourse/Datasets/1800.csv")
 parsedLines = lines.map(parseLine)
 
 # Removes any non TMIN records

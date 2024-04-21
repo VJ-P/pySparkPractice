@@ -22,7 +22,7 @@ def parseLine(line):
 conf = SparkConf().setMaster("local").setAppName("MaxTemp")
 sc = SparkContext(conf=conf)
 
-lines = sc.textFile("C:/Users/vijay/Documents/SparkCourse/customer-orders.csv")
+lines = sc.textFile("C:/Users/vijay/Documents/SparkCourse/Datasets/customer-orders.csv")
 parsedLines = lines.map(parseLine)
 amountSpent = parsedLines.reduceByKey(lambda x, y: x + y).map(lambda x: (x[1], x[0])).sortByKey()
 
